@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketash</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: #0A4E92;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+        }
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #05BE6E;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: #f2f7fb;
+        }
+        .hero h1 {
+            font-size: 2rem;
+            color: #0A4E92;
+        }
+        .hero p {
+            color: #666;
+            max-width: 600px;
+        }
+        .buttons {
+            margin-top: 1rem;
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary {
+            background: #0A4E92;
+            color: white;
+        }
+        .btn-primary:hover {
+            background: #063870;
+        }
+        .btn-secondary {
+            background: white;
+            color: #0A4E92;
+            border: 1px solid #0A4E92;
+        }
+        .btn-secondary:hover {
+            background: #e0ecf7;
+        }
+        .features {
+            padding: 2rem;
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        .feature {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        footer {
+            background: #0A4E92;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Marketash</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Marketplace</a>
+            <a href="#">Sign In</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Connecting African Farmers to Global Markets</h1>
+        <p>Empowering farmers through technology and fair market access with AI-driven tools.</p>
+        <div class="buttons">
+            <button class="btn btn-primary" onclick="showAlert('Marketplace')">Explore Marketplace</button>
+            <button class="btn btn-secondary" onclick="showAlert('Register')">Register as Farmer</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature">
+            <h3>Smart Bidding</h3>
+            <p>AI matches buyers with the best available produce bids in real-time.</p>
+        </div>
+        <div class="feature">
+            <h3>Crop Diagnosis</h3>
+            <p>Upload images of your crops and get instant health reports.</p>
+        </div>
+        <div class="feature">
+            <h3>Fair Payments</h3>
+            <p>Track transactions and receive timely payments via mobile money.</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Marketash. All rights reserved.
+    </footer>
+
+    <script>
+        function showAlert(action) {
+            alert(`You clicked: ${action}`);
+        }
+    </script>
+</body>
+</html>
