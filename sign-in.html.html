@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register / Sign In - Marketash</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f8fb;
+      color: #333;
+    }
+    header {
+      background: #0A4E92;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header img {
+      height: 40px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #0A4E92;
+    }
+    .form-toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .form-toggle button {
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #0A4E92;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+    .form-toggle button.active {
+      border-color: #05BE6E;
+      font-weight: bold;
+    }
+    form {
+      display: none;
+      flex-direction: column;
+    }
+    form.active {
+      display: flex;
+    }
+    label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input, select {
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .btn {
+      margin-top: 2rem;
+      padding: 0.7rem;
+      background: #0A4E92;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #063870;
+    }
+    footer {
+      background: #0A4E92;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div><img src="../images/new marketash logo.png" alt="Marketash Logo"></div>
+    <nav>
+      <a href="../index.html" style="color:white; text-decoration: none;">Home</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Marketash Registration & Sign-In</h2>
+    <div class="form-toggle">
+      <button id="registerBtn" class="active" onclick="toggleForm('register')">Register</button>
+      <button id="signinBtn" onclick="toggleForm('signin')">Sign In</button>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="registerForm" class="active">
+      <label for="userType">Register As:</label>
+      <select id="userType" required>
+        <option value="">Select</option>
+        <option value="farmer">Farmer</option>
+        <option value="buyer">Buyer</option>
+      </select>
+
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" required>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required>
+
+      <label for="nationality">Nationality:</label>
+      <input type="text" id="nationality" required>
+
+      <label for="city">City / Province:</label>
+      <input type="text" id="city" required>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+
+    <!-- Sign-In Form -->
+    <form id="signinForm">
+      <label for="signinEmail">Email:</label>
+      <input type="email" id="signinEmail" required>
+
+      <label for="signinPassword">Password:</label>
+      <input type="password" id="signinPassword" required>
+
+      <button type="submit" class="btn">Sign In</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Marketash. Empowering Farmers Digitally.
+  </footer>
+
+  <script>
+    function toggleForm(form) {
+      const registerForm = document.getElementById('registerForm');
+      const signinForm = document.getElementById('signinForm');
+      const registerBtn = document.getElementById('registerBtn');
+      const signinBtn = document.getElementById('signinBtn');
+
+      if (form === 'register') {
+        registerForm.classList.add('active');
+        signinForm.classList.remove('active');
+        registerBtn.classList.add('active');
+        signinBtn.classList.remove('active');
+      } else {
+        signinForm.classList.add('active');
+        registerForm.classList.remove('active');
+        signinBtn.classList.add('active');
+        registerBtn.classList.remove('active');
+      }
+    }
+
+    // Optional: Redirect to profile page after submission (mock behavior)
+    document.getElementById('registerForm').onsubmit = function(e) {
+      e.preventDefault();
+      alert('Registered successfully! Redirecting to your profile...');
+      window.location.href = "profile.html";
+    };
+
+    document.getElementById('signinForm').onsubmit = function(e) {
+      e.preventDefault();
+      alert('Signed in successfully!');
+      window.location.href = "profile.html";
+    };
+  </script>
+</body>
+</html>
