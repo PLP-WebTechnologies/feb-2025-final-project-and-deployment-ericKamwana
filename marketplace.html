@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marketash | Marketplace</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #0A4E92;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #05BE6E;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 2rem;
+      background: #f2f7fb;
+    }
+
+    .hero h1 {
+      color: #0A4E92;
+      margin-bottom: 1rem;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .category-btn {
+      background: #0A4E92;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .category-btn:hover {
+      background-color: #063870;
+    }
+
+    .products-section {
+      padding: 1rem 2rem;
+    }
+
+    .section-title {
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+      color: #0A4E92;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: 1rem;
+    }
+
+    .product-details h4 {
+      margin: 0.5rem 0;
+      color: #0A4E92;
+    }
+
+    footer {
+      background: #0A4E92;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>Marketash</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="signin.html">Sign In</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Choose a Category</h1>
+    <div class="categories">
+      <button class="category-btn" onclick="scrollToSection('fruits')">Fruits</button>
+      <button class="category-btn" onclick="scrollToSection('vegetables')">Vegetables</button>
+      <button class="category-btn" onclick="scrollToSection('organic')">Other Organic Products</button>
+    </div>
+  </section>
+
+  <section class="products-section" id="fruits">
+    <h2 class="section-title">Fruits</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="images/Organic Avocados.jpg" alt="Organic Avocados">
+        <div class="product-details">
+          <h4>Organic Avocados</h4>
+          <p><strong>Price:</strong> Ksh 30 each</p>
+          <p><strong>Farmer:</strong> Wanjiru - Murang'a</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/Green Bananas.jpg" alt="Green Bananas">
+        <div class="product-details">
+          <h4>Green Bananas (Matoke)</h4>
+          <p><strong>Price:</strong> Ksh 40 per kg</p>
+          <p><strong>Farmer:</strong> Otieno - Kisii</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section" id="vegetables">
+    <h2 class="section-title">Vegetables</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="images/Green Peppers.jpg" alt="Green Peppers">
+        <div class="product-details">
+          <h4>Green Peppers</h4>
+          <p><strong>Price:</strong> Ksh 50 per kg</p>
+          <p><strong>Farmer:</strong> Achieng - Homabay</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/organic tomatoes.jpg" alt="Organic Tomatoes">
+        <div class="product-details">
+          <h4>Organic Tomatoes</h4>
+          <p><strong>Price:</strong> Ksh 45 per kg</p>
+          <p><strong>Farmer:</strong> Muli - Makueni</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/Red Onions.jpg" alt="Red Onions">
+        <div class="product-details">
+          <h4>Red Onions</h4>
+          <p><strong>Price:</strong> Ksh 35 per kg</p>
+          <p><strong>Farmer:</strong> Kibet - Elgeyo Marakwet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-section" id="organic">
+    <h2 class="section-title">Other Organic-Based Products</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="images/Macadamia Nuts.jpg" alt="Macadamia Nuts">
+        <div class="product-details">
+          <h4>Macadamia Nuts</h4>
+          <p><strong>Price:</strong> Ksh 200 per kg</p>
+          <p><strong>Farmer:</strong> Njenga - Embu</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/Fresh Miraa (Khat).jpg" alt="Miraa">
+        <div class="product-details">
+          <h4>Fresh Miraa (Khat)</h4>
+          <p><strong>Price:</strong> Ksh 150 per bunch</p>
+          <p><strong>Farmer:</strong> Muthoni - Meru</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/Premium Cassava.jpg" alt="Cassava">
+        <div class="product-details">
+          <h4>Premium Cassava</h4>
+          <p><strong>Price:</strong> Ksh 25 per kg</p>
+          <p><strong>Farmer:</strong> Mwikali - Kitui</p>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <img src="images/Premium Coffee Beans.jpg" alt="Coffee Beans">
+        <div class="product-details">
+          <h4>Premium Coffee Beans</h4>
+          <p><strong>Price:</strong> Ksh 300 per kg</p>
+          <p><strong>Farmer:</strong> Kiprono - Kericho</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Marketash. All rights reserved.
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
