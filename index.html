@@ -1,149 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketash</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background: #0A4E92;
-            color: white;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-        }
-        nav a {
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #05BE6E;
-        }
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            background: #f2f7fb;
-        }
-        .hero h1 {
-            font-size: 2rem;
-            color: #0A4E92;
-        }
-        .hero p {
-            color: #666;
-            max-width: 600px;
-        }
-        .buttons {
-            margin-top: 1rem;
-        }
-        .btn {
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary {
-            background: #0A4E92;
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #063870;
-        }
-        .btn-secondary {
-            background: white;
-            color: #0A4E92;
-            border: 1px solid #0A4E92;
-        }
-        .btn-secondary:hover {
-            background: #e0ecf7;
-        }
-        .features {
-            padding: 2rem;
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        }
-        .feature {
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-        footer {
-            background: #0A4E92;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marketash</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #0A4E92;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+    .logo {
+      height: 50px;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #05BE6E;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: #f2f7fb;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      color: #0A4E92;
+    }
+    .hero p {
+      color: #666;
+      max-width: 600px;
+    }
+    .buttons {
+      margin-top: 1rem;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn-primary {
+      background: #0A4E92;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #063870;
+    }
+    .btn-secondary {
+      background: white;
+      color: #0A4E92;
+      border: 1px solid #0A4E92;
+    }
+    .btn-secondary:hover {
+      background: #e0ecf7;
+    }
+    .features {
+      padding: 2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .feature {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .step-section {
+      padding: 2rem;
+      text-align: center;
+    }
+    .step-section img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+    }
+    .step-section h2 {
+      color: #0A4E92;
+      margin-bottom: 0.5rem;
+    }
+    .step-section p {
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    footer {
+      background: #0A4E92;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      position: relative;
+    }
+    footer img {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      height: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+      .step-section img {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div>Marketash</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="marketplace.html" class="btn">Visit Marketplace</a>
+  <header>
+    <div>Marketash</div>
+    <img src="images/new marketash logo.png" alt="Marketash Logo" class="logo"/>
+    <nav>
+      <a href="#">Home</a>
+      <a href="marketplace.html" class="btn">Visit Marketplace</a>
+      <a href="#">Sign In</a>
+    </nav>
+  </header>
 
-            <a href="#">Sign In</a>
-        </nav>
-    </header>
+  <section class="hero">
+    <h1>Connecting African Farmers to Global Markets</h1>
+    <p>Empowering farmers through technology and fair market access with AI-driven tools.</p>
+    <div class="buttons">
+      <button class="btn btn-primary" onclick="showAlert('Marketplace')">Explore Marketplace</button>
+      <button class="btn btn-secondary" onclick="showAlert('Register')">Register as Farmer</button>
+    </div>
+  </section>
 
-    <section class="hero">
-        <h1>Connecting African Farmers to Global Markets</h1>
-        <p>Empowering farmers through technology and fair market access with AI-driven tools.</p>
-        <div class="buttons">
-            <button class="btn btn-primary" onclick="showAlert('Marketplace')">Explore Marketplace</button>
-            <button class="btn btn-secondary" onclick="showAlert('Register')">Register as Farmer</button>
-        </div>
-    </section>
+  <section class="features">
+    <div class="feature">
+      <h3>Smart Bidding</h3>
+      <p>AI matches buyers with the best available produce bids in real-time.</p>
+    </div>
+    <div class="feature">
+      <h3>Crop Diagnosis</h3>
+      <p>Upload images of your crops and get instant health reports.</p>
+    </div>
+    <div class="feature">
+      <h3>Fair Payments</h3>
+      <p>Track transactions and receive timely payments via mobile money.</p>
+    </div>
+  </section>
 
-    <section class="features">
-        <div class="feature">
-            <h3>Smart Bidding</h3>
-            <p>AI matches buyers with the best available produce bids in real-time.</p>
-        </div>
-        <div class="feature">
-            <h3>Crop Diagnosis</h3>
-            <p>Upload images of your crops and get instant health reports.</p>
-        </div>
-        <div class="feature">
-            <h3>Fair Payments</h3>
-            <p>Track transactions and receive timely payments via mobile money.</p>
-        </div>
-    </section>
+  <section class="step-section">
+    <h2>Empowering the Next Generation of Farmers</h2>
+    <img src="images/young farmers using marketash.png" alt="Young farmers using Marketash"/>
+    <p>Young, tech-savvy farmers across Africa are embracing Marketash to sell produce, learn modern farming practices, and access fair prices.</p>
 
-    <footer>
-        &copy; 2025 Marketash. All rights reserved.
-    </footer>
+    <h2>AI Crop Doctor in Action</h2>
+    <img src="images/AI Crop Doctor in Action.png" alt="AI Crop Doctor in Action"/>
+    <p>Instant crop health diagnosis using AI ensures farmers can prevent diseases before they spread, increasing yield and quality.</p>
 
-    <script>
-        function showAlert(action) {
-            alert(`You clicked: ${action}`);
-        }
-    </script>
+    <h2>Data Analytics for Agribusiness</h2>
+    <img src="images/Data Analytics for Agribusinesses.png" alt="Data Analytics for Agribusiness"/>
+    <p>Our platform provides data insights to help farmers and buyers make smart decisions, monitor supply chains, and forecast demand.</p>
+
+    <h2>Trusted Logistics & Delivery</h2>
+    <img src="images/Logistics & Delivery Trust.png" alt="Logistics and Delivery Trust"/>
+    <p>Marketash partners with trusted logistics providers to ensure fresh produce is delivered efficiently and reliably across the region.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Marketash. All rights reserved.
+    <img src="images/new marketash logo.png" alt="Marketash Logo"/>
+  </footer>
+
+  <script>
+    function showAlert(action) {
+      alert(`You clicked: ${action}`);
+    }
+  </script>
 </body>
 </html>
