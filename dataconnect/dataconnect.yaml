@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "feb-2025-final-project-and-deployment-erickamwana"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "feb-2025-final-project-and-deployment-erickamwana-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
